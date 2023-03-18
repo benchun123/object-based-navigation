@@ -23,27 +23,27 @@ Prerequisites
     PCL (1.8.1)
 
 in one terminal: 
-    ```c++
-    cd object_segmentation_ws
-    catkin_make
-    source devel/setup.bash
-    roslaunch object_segmentation debug.launch
-    ```
+```c++
+cd object_segmentation_ws
+catkin_make
+source devel/setup.bash
+roslaunch object_segmentation debug.launch
+```
 in another terminal where we have the bag
-    ```c++
-    rosbag play agiprobot_3.bag
-    ```
+```c++
+rosbag play agiprobot_3.bag
+```
 ## save object information
-    ```c++
-    rostopic pub /save_map_cuboid std_msgs/Bool "data: false" 
-    ```
+```c++
+rostopic pub /save_map_cuboid std_msgs/Bool "data: false" 
+```
 the global object information(in map frame) will save to 
 $(find object_segmentation)/config/result_obj.txt
 
 you can also show the object information with map by 
-    ```c++
-    roslaunch object_segmentation show_hyper_map.launch 
-    ```
+```c++
+roslaunch object_segmentation show_hyper_map.launch 
+```
 
 ## 3D Object Detection: 
 * read bbox point cloud with detection
