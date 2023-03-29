@@ -25,7 +25,7 @@ Clone the repository:
 ```
     git clone https://github.com/benchun123/object-based-navigation
 ```
-Dataset: Download the [AgiProbot Dataset](https://bwsyncandshare.kit.edu/s/2e7cBoNXoSAS7Dq) or [AgiProbot rosbag](https://bwsyncandshare.kit.edu/s/6bpEasr5wj29RAA).
+Dataset: Download the [AgiProbot Dataset](https://bwsyncandshare.kit.edu/s/2e7cBoNXoSAS7Dq) or [AgiProbot rosbag](https://bwsyncandshare.kit.edu/s/6bpEasr5wj29RAA). More info for data process can be found [here](https://bwsyncandshare.kit.edu/s/4fsZmNnEAPL8FKH)
 
 Capture framework: Microsoft RGB-D camera is mounted, the ROS driver can be found [here](https://github.com/microsoft/Azure_Kinect_ROS_Driver). The [azure_kinect_capture_framework](./object_segmentation_ws/src/azure_kinect_capture_framework) provides a simple to capture a single image. 
 
@@ -71,13 +71,18 @@ The coarse-to-fine navigation is implemented by ROS with [actionlib](http://wiki
 The functions can be activated by
 ```
 cd object_segmentation_ws
+catkin_make laser_line_extraction
+source devel/setup.bash
+roslaunch laser_line_extraction debug.launch
+```
+open another terminal and run: 
+```
+cd object_segmentation_ws
 catkin_make karispro_msgs
 catkin_make agv_control
 source devel/setup.bash
-roslaunch laser_line_extraction debug.launch
 roslaunch agv_control agv_control.launch
 ```
-
 Then, an action server is initialized and can be navigated to "station_A" by: 
 ```
 cd object_segmentation_ws
@@ -86,7 +91,7 @@ rostopic pub /karisagiprobot/coarse_to_fine/result 'station_A'
 ```
 <div align=center><img src="./README_Picture/Fig_6_Navigation_Global_Example.png"/></div>
 
-## 5. Acknowledgement 
+## 4. Acknowledgement 
 
 Thanks for the great work: [**AgiProbot**](https://www.ifl.kit.edu/english/robotics_and_interactive_systems_5395.php), [**KARIS PRO**](https://www.ifl.kit.edu/english/robotics_and_interactive_systems_2448.php), [**SLAM-Gmapping**](http://wiki.ros.org/gmapping), and [**Line Segmentation**](https://github.com/kam3k/laser_line_extraction).
 
