@@ -1,0 +1,8 @@
+<launch>
+
+  <!-- load station parameters -->
+  <!-- <rosparam file="$(find agv_control)/config/station_poses.yaml" /> -->
+
+  <node name="example" pkg="azure_kinect_capture_framework" type="example.py" output="screen">
+  </node>
+</launch>

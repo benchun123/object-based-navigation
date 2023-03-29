@@ -1,0 +1,8 @@
+#goal definition
+string station_name
+---
+#result definition
+bool success
+---
+#feedback
+string state

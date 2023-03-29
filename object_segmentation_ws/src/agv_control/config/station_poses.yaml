@@ -1,0 +1,26 @@
+station_locations: {
+  station_A: {
+      name: "Station A",
+      position: [5.190177418922804, -1.6694622153831369, 0.0], # position in map frame
+      orientation: [0.0, 0.0, -0.7151331353552669, 0.6989882679394165],  # orientation in map frame
+      docking_pose: "right"
+  },
+  station_C: {
+      name: "Station C",
+      position: [5.643229807351144, 3.635260741819707, 0.0], # position in map frame
+      orientation: [0.0, 0.0, 0, 1],  # orientation in map frame
+      docking_pose: "right"
+  },
+  station_B: {
+      name: "Station B",
+      position: [7.102543786515637, -2.6415160206558648, 0.0], # position in map frame
+      orientation: [0.0, 0.0, -0.02252188277652757, 0.999746350228997],  # orientation in map frame
+      docking_pose: "left"
+  },
+  station_D: {
+      name: "Station D",
+      position: [6.85363509763, 1.68080844682, 0.0], # position in map frame
+      orientation: [0.0, 0.0, -0.0176612632503, 0.999844027727],  # orientation in map frame
+      docking_pose: "left"
+  }
+}
