@@ -2,12 +2,16 @@
 
 **Related Paper:**  
 
-+ Benchun Zhou, Jan-Felix Klein, Bo Wang, and Markus Hillemann. **Semantic Mapping and Autonomous Navigation for Agile Production System**[C]//2023 Under Review (submitted to CASE 2023). [[**Link**]()] [[**PDF**]()] [[**Slide**](./README_Picture/2023_CASE_Slide.pdf)] [[**Youtube**](https://youtu.be/4_sbpMSwPKs)] [[**Bilibili**](https://www.bilibili.com/video/BV1wk4y1t7q9)]
++ Benchun Zhou, Jan-Felix Klein, Bo Wang, and Markus Hillemann. **Semantic Mapping and Autonomous Navigation for Agile Production System**[C]//2023 IEEE 19th International Conference on Automation Science and Engineering (CASE). IEEE, 2023. [[**Link**]()] [[**PDF**](./README_Picture/2023_CASE_Publication.pdf)] [[**Slide**](./README_Picture/2023_CASE_Slide.pdf)] [[**Youtube**](https://youtu.be/4_sbpMSwPKs)] [[**Bilibili**](https://www.bilibili.com/video/BV1wk4y1t7q9)]
 
 + If you use the code in your academic work, please cite the above paper. 
 
-## 0. AgiProbot 
-To develop a production system for remanufacturing, in which used products can be disassembled with a high degree of automation. 7 institutes in KIT were involved and we (IFL) are responsible for developing an autonomous intra-logistics system for material flow, such as transporting the items among different workstations. [[**AgiProbot**](http://agiprobot.de/)] [[**AgiProbot-IFL**](https://www.ifl.kit.edu/english/robotics_and_interactive_systems_5395.php)]
+**AgiProbot**  
+
++ This autonomous navigation system comes from a research project "AgiProbot" (Agile PROduction system using mobile, learning roBOTs with multi-sensors for uncertain product specifications.). 
+
++ This research project aims to develop a production system for remanufacturing, in which used products can be disassembled and recycled. 7 institutes participate, and we (IFL) develop an autonomous intralogistics system which realizes the material flow of the production system by means of driverless transport systems, smart transfer units and handling robots. To be specific, there are several workstations and transport robots, we are going to design an autonomous navigation system to delivery objects among these workstations.
++ [[**AgiProbot**](http://agiprobot.de/)] [[**AgiProbot-IFL**](https://www.ifl.kit.edu/english/robotics_and_interactive_systems_5395.php)]
 <div align=center><img src="./README_Picture/Fig_1_Agiprobot_Sim.png"/></div>
 
 ## 1. Prerequisites 
@@ -26,6 +30,8 @@ Clone the repository:
     git clone https://github.com/benchun123/object-based-navigation
 ```
 Dataset: Download the [AgiProbot Dataset](https://bwsyncandshare.kit.edu/s/2e7cBoNXoSAS7Dq) or [AgiProbot rosbag](https://bwsyncandshare.kit.edu/s/6bpEasr5wj29RAA). More info for data process can be found [here](https://bwsyncandshare.kit.edu/s/4fsZmNnEAPL8FKH)
+
+2D mapping and localization: for 2D mapping, we use [gmapping packages](https://github.com/ros-perception/slam_gmapping.git), for localization, we try to match the laser points to the map with [scan tools](https://github.com/CCNYRoboticsLab/scan_tools) 
 
 Capture framework: Microsoft RGB-D camera is mounted, the ROS driver can be found [here](https://github.com/microsoft/Azure_Kinect_ROS_Driver). The [azure_kinect_capture_framework](./object_segmentation_ws/src/azure_kinect_capture_framework) provides a simple to capture a single image. 
 
